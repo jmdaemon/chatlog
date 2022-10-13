@@ -20,7 +20,7 @@ end
 
 function log_msg(line)
     local log_name = log_timestamp()
-    if (not file.Exists(log_name)) then
+    if not file.Exists(PLAYER_LOGS_DIR) then
         init_log_dir()
     end
     file.Append(log_name, line)
