@@ -1,6 +1,7 @@
 -- Constants
 SCRIPT_NAME = 'gmodchatlog'
-PLAYER_LOGS_DIR = SCRIPT_NAME .. '/player/logs'
+CURRENT_SERVER_IP = game.GetIPAddress()
+PLAYER_LOGS_DIR = SCRIPT_NAME .. '/player/logs/' .. CURRENT_SERVER_IP
 LOG_DATE_FORMAT = '%Y-%m-%d'
 LOG_DATE_TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 
