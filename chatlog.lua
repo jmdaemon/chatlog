@@ -7,7 +7,7 @@ LOG_DATE_TIME_FORMAT = '%Y-%m-%d %H-%M-%S'
 -- General purpose helper functions
 function format_msg(ply, text)
    local datetime = os.date(LOG_DATE_FORMAT, os.time())
-   local name = ply.Name
+   local name = ply.GetName()
    local msg = '[' .. datetime .. '] ' .. name .. ': ' .. text
    return msg
 end
