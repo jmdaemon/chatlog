@@ -33,9 +33,9 @@ function log_timestamp()
    return log_name
 end
 
-function log_msg(line)
+function log_msg(ply, line)
    local log_name = log_timestamp()
-   file.Append(PLAYER_LOGS_DIR .. '/' .. log_name, format_msg(line))
+   file.Append(PLAYER_LOGS_DIR .. '/' .. log_name, format_msg(ply, line))
 end
 
 function gmodchat_log_console_msg(msg)
@@ -44,7 +44,7 @@ end
 
 function log_chat(ply, text, bTeam, bDead)
    local line = text .. '\r'
-   log_msg(line)
+   log_msg(ply, line)
    gmodchat_log_console_msg('Message: ' .. text)
 
    if CLIENT == true then
