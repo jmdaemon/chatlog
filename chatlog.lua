@@ -1,10 +1,13 @@
+-- Imports
+local f = require('F')
+
 -- Constants
 PLAYER_LOGS_DIR = 'player/logs'
 LOG_FORMAT = '%Y-%m-%d-chat.txt'
 
 -- Create the log directory to store player chats
 function init_log_dir()
- file.CreateDir(PLAYER_LOGS_DIR)
+    file.CreateDir(PLAYER_LOGS_DIR)
 end
 
 -- Creates the timestamp for the chatlog file
