@@ -1,7 +1,9 @@
 -- Constants
 SCRIPT_NAME = 'gmodchatlog'
 CURRENT_SERVER_IP = game.GetIPAddress()
-PLAYER_LOGS_DIR = SCRIPT_NAME .. '/player/logs/' .. CURRENT_SERVER_IP
+
+-- You cannot make a directory with ':' on NTFS drives
+PLAYER_LOGS_DIR = SCRIPT_NAME .. '/player/logs/' .. CURRENT_SERVER_IP:gsub(":", "-")
 LOG_DATE_FORMAT = '%Y-%m-%d'
 LOG_DATE_TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 
