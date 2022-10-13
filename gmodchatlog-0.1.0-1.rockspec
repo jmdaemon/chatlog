@@ -19,6 +19,6 @@ build = {
    -- We'll start here.
    type = "builtin",
   modules = {
-      chatlog = "chatlog.lua"
+      chatlog = "lua/autorun/client/chatlog.lua"
   }
 }
