@@ -56,7 +56,7 @@ end
 -- Client side
 if CLIENT == true then
    if not file.Exists('data', PLAYER_LOGS_DIR) then
-      init_log_dir()
+      log_dir_init()
       log_plugin_msg('Created ' .. PLAYER_LOGS_DIR)
    end
 
@@ -67,7 +67,7 @@ end
 -- Local Server
 if SERVER == true then 
    if not file.Exists('data', PLAYER_LOGS_DIR) then
-      init_log_dir()
+      log_dir_init()
       log_plugin_msg('Created ' .. PLAYER_LOGS_DIR)
    end
 
