@@ -2,6 +2,15 @@
 SCRIPT_NAME = 'gmodchatlog'
 PLAYER_LOGS_DIR = SCRIPT_NAME .. '/player/logs'
 LOG_DATE_FORMAT = "%Y-%m-%d"
+LOG_DATE_TIME_FORMAT = "%Y-%m-%d %H-%M-%S"
+
+-- Helper functions
+function format_msg(ply, text)
+   local datetime = os.date(LOG_DATE_FORMAT, os.time())
+   local name = ply.Name
+   local msg = '[' .. datetime .. '] ' .. name .. ': ' .. text
+   return msg
+end
 
 -- Create the log directory to store player chats
 function log_dir_init()
@@ -19,7 +28,7 @@ end
 
 function log_msg(line)
    local log_name = log_timestamp()
-   file.Append(PLAYER_LOGS_DIR .. '/' .. log_name, line)
+   file.Append(PLAYER_LOGS_DIR .. '/' .. log_name, format_msg(line))
 end
 
 -- Outputs a message to the console with [ plugin_name ]
@@ -30,6 +39,7 @@ end
 function gmodchat_log_console_msg(msg)
     log_console_msg(SCRIPT_NAME, msg)
 end
+
 
 function log_chat(ply, text, bTeam, bDead)
    local line = text .. '\r'
