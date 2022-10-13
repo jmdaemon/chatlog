@@ -2,14 +2,14 @@
 SCRIPT_NAME = 'gmodchatlog'
 PLAYER_LOGS_DIR = SCRIPT_NAME .. '/player/logs'
 LOG_DATE_FORMAT = '%Y-%m-%d'
-LOG_DATE_TIME_FORMAT = '%Y-%m-%d %H-%M-%S'
+LOG_DATE_TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 
 -- General purpose helper functions
 function format_msg(ply, text)
    local datetime = os.date(LOG_DATE_TIME_FORMAT, os.time())
    local name = ply:Name()
    local steamid64 = ply:OwnerSteamID64()
-   local msg = '[' .. datetime .. '] ' .. name .. '(' .. steamid64 .. ')' .. ': ' .. text
+   local msg = '[' .. datetime .. '] ' .. name .. ' (' .. steamid64 .. ')' .. ': ' .. text
    return msg
 end
 
